@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset='UTF-8' />
+    <title>Game of Life</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="index.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <section class="boardInputs">
+        <h2>Enter the size of the board</h2>
+
+        <form>
+            <label for="height">
+                Height: <input type="text" id="height" required />
+            </label>
+
+            <label for="width">
+                Width: <input type="text" id="width" required />
+            </label>
+            <input type="button" value="Submit" onclick="renderBoard()" />
+        </form>
+    </section>
+
+
+    <section class="game-container">
+
+    </section>
+
+    <script src="src/index.js"></script>
+</body>
+
+</html>
