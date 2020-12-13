@@ -1,5 +1,15 @@
 var canvas;
 var context;
+const resolution = 40;
+
+function buildGrid() {
+    const COLS = canvas.width / resolution;
+    const ROWS = canvas.height / resolution;
+
+    return new Array(COLS).fill(null)
+        .map(() => new Array(ROWS).fill(0)
+            .map(() => Math.floor(Math.random() * 2)));
+}
 
 function renderBoard() {    
     let input_height = document.getElementById('height').value;
@@ -20,16 +30,28 @@ function renderBoard() {
     parentContainer.appendChild(canvas);
 
     hideForm()
-    startGame()
+
+    let grid = buildGrid();
+
+    console.log(grid)
+    // render(grid);
+}
+
+function render(grid) {
+    for (let col = 0; col < grid.length; col++) {
+        for (let row = 0; row < grid[col].length; row++) {
+            const cell = grid[col][row]
+
+            context.beginPath();
+            context.rect(col * resolution, row * resolution, resolution, resolution);
+            context.stroke();
+        }
+    }
 }
 
 function hideForm() {
     // hiding the entire section
     let form = document.getElementsByClassName("boardInputs")[0];
-    
-    form.style.display = "none";
-}
 
-function startGame() {
-    console.log("STARTING Context ", context)
+    form.style.display = "none";
 }
