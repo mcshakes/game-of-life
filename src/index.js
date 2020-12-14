@@ -2,6 +2,25 @@ var canvas;
 var context;
 const resolution = 40;
 
+function hideForm() {
+    // hiding the entire section
+    let form = document.getElementsByClassName("boardInputs")[0];
+    form.style.display = "none";
+}
+
+function startGameFlow() {
+    let height = document.getElementById('height').value;
+    let width = document.getElementById('width').value;
+
+    [COLS, ROWS] = buildBoard(height, width)
+    hideForm()
+    grid = buildGrid()
+    
+    nextGen(grid, COLS, ROWS);
+    render(grid);
+    requestAnimationFrame(update);
+}
+
 function buildGrid() {
     const COLS = canvas.width / resolution;
     const ROWS = canvas.height / resolution;
@@ -11,18 +30,15 @@ function buildGrid() {
             .map(() => Math.floor(Math.random() * 2)));  // random fill of 1 or 0
 }
 
-function renderBoard() {    
-    let input_height = document.getElementById('height').value;
-    let input_width = document.getElementById('width').value;
-    
-    let parentContainer =  document.getElementsByClassName("game-container")[0];
-
+function buildBoard(height, width) {    
+        
+    let parentContainer =  document.querySelector(".game-container");
     canvas = document.createElement("canvas");
     
     context = canvas.getContext("2d");
     canvas.id = "game-board";
-    canvas.width = input_width;
-    canvas.height = input_height;
+    canvas.width = height;
+    canvas.height = width;
     canvas.style.zIndex   = 8;
     canvas.style.position = "absolute";
     canvas.style.border   = "1px solid black";
@@ -31,11 +47,7 @@ function renderBoard() {
     const ROWS = canvas.height / resolution;
 
     parentContainer.appendChild(canvas);
-
-    hideForm()
-
-    let grid = buildGrid();
-    update(grid)
+    return [COLS, ROWS]
 }
 
 
@@ -54,14 +66,9 @@ function render(grid) {
 }
 
 
-function hideForm() {
-    // hiding the entire section
-    let form = document.getElementsByClassName("boardInputs")[0];
-
-    form.style.display = "none";
-}
 
 function nextGen(grid, columns, rows) {
+    console.log("IN nextGen", grid)
     const nextGen = grid.map(arr => [...arr]); // a copy of the grid array
 
     for (let col = 0; col < grid.length; col++) {
@@ -106,10 +113,11 @@ function nextGen(grid, columns, rows) {
     return nextGen;
 }
 
-requestAnimationFrame(update);
 
-function update(in_grid) {
-    grid = nextGen(in_grid, COLS, ROWS);
+function update(in_grid, columns, rows) {
+    console.log("IN UPDATE", grid)
+    grid = nextGen(in_grid, columns, rows);
     render(grid);
     requestAnimationFrame(update);
 }
+
