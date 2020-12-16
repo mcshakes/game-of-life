@@ -10,6 +10,13 @@
 
 <body>
     <section>
+        <div class="game-button">
+            <h2>See the game in action</h2>
+            <input type="button" value="Submit" onclick="startGameFlow()" />
+        </div>
+    </section>
+
+    <section id="tribute" style="display: block;">
         <h4>"People think that mathematics is complicated. Mathematics is the simple bit, it’s the stuff we CAN
             understand. It’s cats that are complicated." ~ John Horton Conway</h4>
         <p>
@@ -26,17 +33,16 @@
             COVID-19.
         </p>
         <a href="https://en.wikipedia.org/wiki/John_Horton_Conway">Learn more at Wikipedia</a>
-        <form>
-            <h2>See the game in action</h2>
-            <input type="button" value="Submit" onclick="startGameFlow()" />
-        </form>
+
+        <div class="image-container">
+            <img src="./assets/conway.jpg" alt="Image of John Conway">
+        </div>
     </section>
 
-    <div class="image-container">
-        <img src="./assets/conway.jpg" alt="Image of John Conway">
-    </div>
-    <section class="game-container">
-
+    <section id="game-container" style="display: none;">
+        <canvas id="game" width="750" height="400" style="border:1px solid lightgrey;">
+            Your browser does not support the HTML5 canvas tag.
+        </canvas>
     </section>
 
     <script src="src/index.js"></script>

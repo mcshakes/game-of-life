@@ -1,33 +1,4 @@
-
-
-function hideTribute() {
-    console.log("Hiding the tribute page")
-
-    let myTribute = document.getElementById("tribute")
-    let displaySetting = myTribute.style.display;
-
-    if (displaySetting == "block") {
-        myTribute.style.display = "none";
-    } 
-}
-
-function showGameBoard() {
-    let gameBoard = document.getElementById("game-container")
-    let displaySetting = gameBoard.style.display;
-
-    if (displaySetting == "none") {
-        gameBoard.style.display = "block";
-    } 
-}
-
-
-
-
-function startGameFlow() {
-    hideTribute()
-    showGameBoard()
-    var gameWorld = new GameWorld("game")
-}
+import Cell from "./cell";
 
 class GameWorld {
     static numColumns = 75;
@@ -41,7 +12,8 @@ class GameWorld {
         this.createGrid();
 
         // Request an animation frame for the first time
-        window.requestAnimationFrame(() => this.gameLoop());
+            // The gameLoop() function will be called as a callback of this request
+        window.requestAnimationFrame(() this.gameLoop());
     }
 
     createGrid() {
@@ -52,7 +24,7 @@ class GameWorld {
         }
     }
 
-    checkSurroundings () {
+    checkSurrounding () {
         // Loop over all cells
         for (let x = 0; x < GameWorld.numColumns; x++) {
             for (let y = 0; y < GameWorld.numRows; y++) {
@@ -107,25 +79,8 @@ class GameWorld {
         return x + (y * GameWorld.numColumns);
     }
 
+
+
 }
 
-
-
-
-class Cell {
-    static width = 10;
-    static height = 10;
-
-    constructor (context, gridX, gridY) {
-        this.context = context;
-        this.gridX = gridX;
-        this.gridY = gridY;
-
-        this. alive = Math.random() > 0.5; //True or False
-    }
-
-    draw() {
-        this.context.fillStyle = this.alive ? "#ff8080" : "#303030";
-        this.context.fillRect(this.gridX * Cell.width, this.gridY * Cell.height, Cell.width, Cell.height)
-    }
-}
+export default GameWorld;
