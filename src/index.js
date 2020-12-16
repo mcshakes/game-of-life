@@ -1,13 +1,12 @@
 
 
-function hideForm() {
-    let form = document.getElementsByClassName("boardInputs")[0];
-    form.style.display = "none";
+function hideTribute() {
+    console.log("Hiding the tribute page")
 }
 
 function getUserInput() {
-    let height = document.getElementById('height').value;
-    let width = document.getElementById('width').value;
+    let height = 300
+    let width = 300
 
     return [height, width]    
 }
@@ -32,12 +31,8 @@ function buildBoard(height, width) {
 }
 
 function create2DArray(cols, rows) {
-    let arr = new Array(cols);
-
-    for (let i = 0; i < arr.length; i++) {
-        arr[i] = new Array(rows);
-    }
-    return arr;
+    return new Array(cols).fill(null)
+                .map(() => new Array(rows).fill(null))
 }
 
 function fillRandom(cols, rows) {
@@ -70,16 +65,48 @@ function drawGrid(grid) {
 }
 
 function updateGrid() {
-    for (let col = 0; col < grid.length; col++) {
-        for (let row = 0; row < grid[col].length; row++) {
+    for (let col = 0; col < theGrid.length; col++) {
+        for (let row = 0; row < theGrid[col].length; row++) {
             let neighborCells = 0;
-            const cell = grid[col][row];
+            const currentCell = theGrid[col][row]
 
+            neighborCells += theGrid[col + 1][row]
+            neighborCells += theGrid[col + 1][row +1]
+            neighborCells += theGrid[col][row +1]
+            neighborCells += theGrid[col - 1][row + 1]
+            neighborCells += theGrid[col - 1][row]
+            neighborCells += theGrid[col - 1][row - 1]
+            neighborCells += theGrid[col][row - 1]
+            neighborCells += theGrid[col + 1][row + 1]
 
-
-
+            switch (totalCells) {
+                case 2:
+                    mirrorGrid[col][row] = currentCell;
+                    break;
+                case 3:
+                    mirrorGrid[col][row] = 1; // make live
+                    break;
+                default:
+                    mirrorGrid[col][row] = 0;
+            }
         }
     }
+
+    for (var l = 1; l < theGrid.length - 1; l++) { //iterate through rows
+        //top and bottom
+        mirrorGrid[l][0] = mirrorGrid[l][theGrid.length - 3];
+        mirrorGrid[l][theGrid.length - 2] = mirrorGrid[l][1];
+        //left and right
+        mirrorGrid[0][l] = mirrorGrid[theGrid.length - 3][l];
+        mirrorGrid[theGrid.length - 2][l] = mirrorGrid[1][l];
+
+    }
+
+
+    //swap grids
+    var temp = theGrid;
+    theGrid = mirrorGrid;
+    mirrorGrid = temp;
 }
 
 var canvas;
@@ -92,14 +119,16 @@ var mirrorGrid;
 
 function startGameFlow() {
     [height, width] = getUserInput()
-    hideForm()
-    buildBoard(400, 400)
+    hideTribute()
+    buildBoard(30, 30)
 
     theGrid = create2DArray(COLS, ROWS)
     mirrorGrid = create2DArray(COLS, ROWS);
 
     fillRandom(COLS, ROWS);
     drawGrid(theGrid)
+    updateGrid(theGrid)
+    // requestAnimationFrame(startGameFlow);
 }
 
 

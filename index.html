@@ -9,22 +9,32 @@
 </head>
 
 <body>
-    <section class="boardInputs">
-        <h2>Enter the size of the board</h2>
+    <section>
+        <h4>"People think that mathematics is complicated. Mathematics is the simple bit, it’s the stuff we CAN
+            understand. It’s cats that are complicated." ~ John Horton Conway</h4>
+        <p>
+            <strong>John Horton Conway</strong> was an English mathematician active in the theory of finite groups, knot
+            theory, number theory, combinatorial game theory and coding theory. He made contributions to many
+            branches of recreational mathematics, most notably the invention of the cellular automaton called the
+            <em>Game of Life</em>.
+        </p>
 
+        <p>
+            Born and raised in Liverpool, Conway spent the first half of his career at the University of Cambridge
+            before moving to the United States, where he held the John von Neumann Professorship at Princeton University
+            for the rest of his career. On 11 April 2020, at age 82, he died of complications from
+            COVID-19.
+        </p>
+        <a href="https://en.wikipedia.org/wiki/John_Horton_Conway">Learn more at Wikipedia</a>
         <form>
-            <label for="height">
-                Height: <input type="text" id="height" required />
-            </label>
-
-            <label for="width">
-                Width: <input type="text" id="width" required />
-            </label>
+            <h2>See the game in action</h2>
             <input type="button" value="Submit" onclick="startGameFlow()" />
         </form>
     </section>
 
-
+    <div class="image-container">
+        <img src="./assets/conway.jpg" alt="Image of John Conway">
+    </div>
     <section class="game-container">
 
     </section>
