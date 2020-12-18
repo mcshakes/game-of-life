@@ -9,14 +9,30 @@
 </head>
 
 <body>
-    <section>
-        <div class="game-button">
-            <h2>See the game in action</h2>
-            <input type="button" value="Submit" onclick="startGameFlow()" />
-        </div>
-    </section>
+    <div class="wrapper-lines">
+        <div class="lines-vertical"></div>
+        <div class="lines-vertical"></div>
+        <div class="lines-vertical"></div>
+        <div class="lines-vertical"></div>
+        <div class="lines-vertical"></div>
+        <div class="lines-vertical"></div>
+        <div class="lines-vertical"></div>
+    </div>
 
     <section id="tribute" style="display: block;">
+
+        <div class="hero-frame">
+            <figure class="conway-container">
+                <img src="./assets/conway.jpg" alt="Image of John Conway">
+            </figure>
+
+            <figure class="survey-container">
+                <img src="./assets/life_forms.jpg" alt="A Survey of Life-Forms">
+            </figure>
+
+            <h1 class="hero-title">John Conway</h1>
+        </div>
+
         <h4>"People think that mathematics is complicated. Mathematics is the simple bit, it’s the stuff we CAN
             understand. It’s cats that are complicated." ~ John Horton Conway</h4>
         <p>
@@ -34,8 +50,13 @@
         </p>
         <a href="https://en.wikipedia.org/wiki/John_Horton_Conway">Learn more at Wikipedia</a>
 
-        <div class="image-container">
-            <img src="./assets/conway.jpg" alt="Image of John Conway">
+
+    </section>
+
+    <section>
+        <div class="game-button">
+            <h2>See the game in action</h2>
+            <input type="button" value="Submit" onclick="startGameFlow()" />
         </div>
     </section>
 

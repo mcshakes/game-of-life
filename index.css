@@ -1,8 +1,50 @@
-body{ background-color: ivory; }
+body { 
+    /* background-color: ivory;  */
+    margin: 0;
+    background-color: #f4efec;
+}
 
+.wrapper-lines {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: space-around;
+}
+
+.lines-vertical {
+    display: block;
+    width: 2px;
+    height: 100%;
+    background-color: grey;
+    opacity: .07;
+}
+
+img {
+    width: 100%;
+}
+
+.hero-frame {
+    border: 1px solid #3f3d3d;
+}
 #game-board {
     border: 1px solid black;
     background: #eee; 
     display: block; 
     margin: 0 auto;
 }
+
+.conway-container {
+    width: 25rem;
+    height: 20rem;
+}
+
+.survey-container {
+    width: 25rem;
+    height: 20rem;
+}
+
