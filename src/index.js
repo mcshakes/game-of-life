@@ -6,7 +6,7 @@ function hideTribute() {
     let myTribute = document.getElementById("tribute")
     let displaySetting = myTribute.style.display;
 
-    if (displaySetting == "block") {
+    if (displaySetting == "flex") {
         myTribute.style.display = "none";
     } 
 }
