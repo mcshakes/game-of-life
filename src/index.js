@@ -1,8 +1,6 @@
 
 
 function hideTribute() {
-    console.log("Hiding the tribute page")
-
     let myTribute = document.getElementById("tribute")
     let displaySetting = myTribute.style.display;
 
@@ -17,14 +15,15 @@ function showGameBoard() {
 
     if (displaySetting == "none") {
         gameBoard.style.display = "block";
-    } 
+    }
+
+    gameBoard.scrollIntoView({
+        behavior: "smooth"
+    })
 }
 
-
-
-
 function startGameFlow() {
-    hideTribute()
+    // hideTribute()
     showGameBoard()
     var gameWorld = new GameWorld("game")
 }

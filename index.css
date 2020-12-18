@@ -14,6 +14,7 @@ body {
     width: 100vw;
     height: 100vh;
     justify-content: space-around;
+    z-index: -1;
 }
 
 .lines-vertical {
@@ -268,4 +269,8 @@ img {
 .game-button:hover {
     /* Clip-path spanning the entire box so it's no longer hiding the full-width border. */
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-  }
+}
+
+#game-container {
+    width: 80%;
+}
