@@ -159,8 +159,9 @@ img {
 }
 
 .divider-light {
-    width: 100%;
+    width: 80%;
     height: 1px;
+    align-self: center;
     margin-bottom: 48px;
     background-color: #cdc6c0;
     opacity: .25;
@@ -169,8 +170,6 @@ img {
 
 
 .wiki-link {
-
-
     text-decoration: none;
     align-items: center;
     justify-content: center;
@@ -244,15 +243,20 @@ img {
     align-items: center;
 }
 
-.shape {
-    /* fill: transparent; 
-                stroke:#f4efec; 
-                stroke-opacity: 0.7; 
-                stroke-dashoffset: 400;
-                 stroke-dasharray: 250;
-                 -webkit-animation: draw 2.5s cubic-bezier(0.42, 1, 0.2, 0.4) infinite;
-                 animation: draw 3.5s cubic-bezier(0.42, 1, 0.2, 0.4) infinite; */
-         
+.paragraphs {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    height: 100%;
+}
+.excerpt {
+    flex: 1;
+}
+.honors {
+    flex: 1;
+}
+.publications {
+    flex: 1;
 }
 
 .game-button {
