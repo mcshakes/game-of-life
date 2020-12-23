@@ -14,7 +14,7 @@ function showGameBoard() {
     let displaySetting = gameBoard.style.display;
 
     if (displaySetting == "none") {
-        gameBoard.style.display = "block";
+        gameBoard.style.display = "flex";
     }
 
     gameBoard.scrollIntoView({
