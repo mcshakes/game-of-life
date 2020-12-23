@@ -152,6 +152,7 @@ img {
 
     display: flex;
     flex-direction: column;
+    padding: 0 10px;
 
 }
 
@@ -170,6 +171,10 @@ img {
     margin-bottom: 48px;
     background-color: #cdc6c0;
     opacity: .25;
+}
+
+#bottom {
+    margin: 0;
 }
 
 
