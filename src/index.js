@@ -1,12 +1,10 @@
 
 
 function hideTribute() {
-    console.log("Hiding the tribute page")
-
     let myTribute = document.getElementById("tribute")
     let displaySetting = myTribute.style.display;
 
-    if (displaySetting == "block") {
+    if (displaySetting == "flex") {
         myTribute.style.display = "none";
     } 
 }
@@ -16,15 +14,16 @@ function showGameBoard() {
     let displaySetting = gameBoard.style.display;
 
     if (displaySetting == "none") {
-        gameBoard.style.display = "block";
-    } 
+        gameBoard.style.display = "flex";
+    }
+
+    gameBoard.scrollIntoView({
+        behavior: "smooth"
+    })
 }
 
-
-
-
 function startGameFlow() {
-    hideTribute()
+    // hideTribute()
     showGameBoard()
     var gameWorld = new GameWorld("game")
 }
