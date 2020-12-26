@@ -142,7 +142,12 @@ img {
     top: 288%;
     z-index: 3;
     right: 20%;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: "Cantarell", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    letter-spacing: normal;
+    line-height: 19.6000003814697px;
+    text-transform: none;
 }
 
 .summary {
@@ -161,7 +166,11 @@ img {
     text-align: center;
     font-weight: 300;
     line-height: 72px;
-    font-family: 'Courier New', Courier, monospace;
+    ffont-family: "Cantarell", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 19.6000003814697px;
+    text-transform: none;
     letter-spacing: .16em;
 }
 
@@ -260,8 +269,14 @@ img {
     align-items: stretch;
     height: 100%;
 }
-.excerpt {
-    /* flex: 1; */
+
+.segment-header {
+    font-family: "Cantarell", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    letter-spacing: normal;
+    line-height: 19.6000003814697px;
+    text-transform: none;
 }
 
 #honors .segment-header {
