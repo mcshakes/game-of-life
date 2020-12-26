@@ -162,6 +162,7 @@ img {
     font-weight: 300;
     line-height: 72px;
     font-family: 'Courier New', Courier, monospace;
+    letter-spacing: .16em;
 }
 
 .divider-light {
@@ -260,13 +261,17 @@ img {
     height: 100%;
 }
 .excerpt {
-    flex: 1;
+    /* flex: 1; */
 }
-.honors {
-    flex: 1;
+
+#honors .segment-header {
+    color: #c27766;
+    font-weight: 700;
 }
-.publications {
-    flex: 1;
+
+#publications .segment-header {
+    color: #c27766;
+    font-weight: 700;
 }
 
 .game-button {
@@ -338,3 +343,27 @@ img {
     justify-content: center;
     margin: auto;
 }
+
+ul {
+    list-style-type: none;
+    text-align: center;
+}
+
+li {
+    margin: 5px 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.tribute-segment {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+}
+
+#summary {
+    background-color: #7b7a7a;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+}
+
