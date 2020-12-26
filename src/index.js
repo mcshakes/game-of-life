@@ -1,5 +1,3 @@
-
-
 function hideTribute() {
     let myTribute = document.getElementById("tribute")
     let displaySetting = myTribute.style.display;

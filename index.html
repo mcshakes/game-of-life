@@ -8,6 +8,7 @@
     <link href="index.css" rel="stylesheet" type="text/css" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Slabo+13px&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 
 <body>
@@ -39,7 +40,7 @@
             CAN
             understand. It’s cats that are complicated." </h4>
 
-        <div class="summary">
+        <div class="summary" data-aos="fade-right">
             <div class="summary-header">
                 <h1>Tribute</h1>
             </div>
@@ -127,13 +128,19 @@
         </div>
     </section>
 
-    <section id="game-container" style="display: none;">
+    <section data-aos="zoom-in" id="game-container" style="display: none;">
         <canvas id="game" width="750" height="400" style="border:1px solid lightgrey;">
             Your browser does not support the HTML5 canvas tag.
         </canvas>
     </section>
 
     <script src="src/index.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1200
+        });
+    </script>
 </body>
 
 </html>
