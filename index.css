@@ -35,10 +35,9 @@ img {
 }
 
 .hero-frame {
-    /* border: 1px solid #3f3d3d; */
     display: block;
     margin-top: 0;
-    width: 60%;
+    width: 797px;
     padding-left: 50px;
     padding-right: 50px;
     padding-bottom: 50px;
