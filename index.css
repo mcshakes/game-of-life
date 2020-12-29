@@ -35,10 +35,9 @@ img {
 }
 
 .hero-frame {
-    /* border: 1px solid #3f3d3d; */
     display: block;
     margin-top: 0;
-    width: 60%;
+    width: 797px;
     padding-left: 50px;
     padding-right: 50px;
     padding-bottom: 50px;
@@ -131,7 +130,7 @@ img {
 }
 
 #quote {
-    font-family: 'Slabo 13px', serif;
+    font-family: 'Courier New', Courier, monospace;
 
 }
 
@@ -142,7 +141,12 @@ img {
     top: 288%;
     z-index: 3;
     right: 20%;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: "Cantarell", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    letter-spacing: normal;
+    line-height: 19.6000003814697px;
+    text-transform: none;
 }
 
 .summary {
@@ -161,7 +165,12 @@ img {
     text-align: center;
     font-weight: 300;
     line-height: 72px;
-    font-family: 'Courier New', Courier, monospace;
+    ffont-family: "Cantarell", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 19.6000003814697px;
+    text-transform: none;
+    letter-spacing: .16em;
 }
 
 .divider-light {
@@ -259,14 +268,24 @@ img {
     align-items: stretch;
     height: 100%;
 }
-.excerpt {
-    flex: 1;
+
+.segment-header {
+    font-family: "Cantarell", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    letter-spacing: normal;
+    line-height: 19.6000003814697px;
+    text-transform: none;
 }
-.honors {
-    flex: 1;
+
+#honors .segment-header {
+    color: #c27766;
+    font-weight: 700;
 }
-.publications {
-    flex: 1;
+
+#publications .segment-header {
+    color: #c27766;
+    font-weight: 700;
 }
 
 .game-button {
@@ -338,3 +357,27 @@ img {
     justify-content: center;
     margin: auto;
 }
+
+ul {
+    list-style-type: none;
+    text-align: center;
+}
+
+li {
+    margin: 5px 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.tribute-segment {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+}
+
+#summary {
+    background-color: #7b7a7a;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+}
+

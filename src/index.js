@@ -1,14 +1,5 @@
 
 
-function hideTribute() {
-    let myTribute = document.getElementById("tribute")
-    let displaySetting = myTribute.style.display;
-
-    if (displaySetting == "flex") {
-        myTribute.style.display = "none";
-    } 
-}
-
 function showGameBoard() {
     let gameBoard = document.getElementById("game-container")
     let displaySetting = gameBoard.style.display;
@@ -23,7 +14,6 @@ function showGameBoard() {
 }
 
 function startGameFlow() {
-    // hideTribute()
     showGameBoard()
     var gameWorld = new GameWorld("game")
 }
