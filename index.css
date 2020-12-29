@@ -150,7 +150,7 @@ img {
 }
 
 .summary {
-    background-color: #3f3d3d;
+    background-color: #252323;
     font-family: sans-serif;
     color: #cdc6c0;
 
@@ -160,12 +160,12 @@ img {
 
 }
 
-.summary-header h1 {
+.summary-header h3 {
     color: #c27766;
     text-align: center;
     font-weight: 300;
     line-height: 72px;
-    ffont-family: "Cantarell", sans-serif;
+    font-family: "Cantarell", sans-serif;
     font-style: normal;
     font-weight: normal;
     line-height: 19.6000003814697px;
@@ -262,6 +262,11 @@ img {
     align-items: center;
 }
 
+.game-intro h4 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 32px;
+}
+
 .paragraphs {
     display: flex;
     flex-direction: row;
@@ -305,7 +310,6 @@ img {
     align-self: center;
     z-index: 0;
     border-radius: 10px;
-    margin-top: 2rem;
     margin-bottom: 2rem;
 }
 
@@ -381,3 +385,8 @@ li {
     text-align: center;
 }
 
+.game-button-container {
+    display: flex;
+    flex-direction: column;
+
+}
